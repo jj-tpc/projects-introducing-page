@@ -22,27 +22,27 @@ const projects = [
   {
     href: "/news-reading-helper",
     icon: "📰",
-    title: "뉴스 보고서 PDF 생성 Skill",
+    title: "Skills | 실시간 키워드 기반 경영진 보고서 작성",
     desc: "뉴스 기사 URL 하나로 1~2쪽 리서치 노트 PDF를 만드는 스킬",
     external: false,
   },
   {
     href: "https://dongguk.the-prompt.me/",
     icon: "🎓",
-    title: "동국대 챗봇 에이전트",
-    desc: "동국대학교 정보를 안내하는 대화형 에이전트 페이지",
+    title: "에이전트 | 동국대학교 학사 카탈로그 FAQ",
+    desc: "학사 카탈로그를 근거로 답하는 대화형 FAQ 에이전트",
     external: true,
   },
   {
     href: "/hr-plugin",
     icon: "📊",
-    title: "HR 리스크 분석 및 예측 대시보드 플러그인",
-    desc: "HR 엑셀로 퇴사 위험을 예측하고 대시보드로 보여 주는 플러그인",
+    title: "플러그인 | HR 리스크 분석 및 퇴사 예측 대시보드",
+    desc: "HR 엑셀로 퇴사 위험을 예측하고 직원 목록 대시보드로 보여 주는 플러그인",
     external: false,
   },
 ];
 
-export const metadata = { title: "산출물 예시" };
+export const metadata = { title: "AI 챌린저스 1기 예상 산출물" };
 
 export default function ExamplesPage() {
   return (
@@ -50,8 +50,8 @@ export default function ExamplesPage() {
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles.avatar} aria-hidden="true">🚀</div>
-          <h1 className={styles.title}>산출물 예시</h1>
-          <p className={styles.sub}>직접 만든 Claude 스킬·에이전트·플러그인을 바로 열어 보거나 내려받을 수 있습니다.</p>
+          <h1 className={styles.title}>AI 챌린저스 1기 예상 산출물</h1>
+          <p className={styles.sub}>더 프롬프트 컴퍼니에서 실제 수행한 AI 산출물 예시입니다.</p>
         </header>
 
         <nav className={styles.nav} aria-label="프로젝트 링크">

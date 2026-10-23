@@ -1,3 +1,5 @@
+> 2026-10-23: 아래 기록은 셰이더 포털 세계 기준이며, 이해관계자 피드백으로 소개 페이지는 단순 검정 배경 + 코드 패널(app/(detail)/detail.css)로 바뀌었다. 재문서화 전까지 이 파일은 참고용이다.
+
 ---
 name: 프로젝트 소개 (Shader Portal)
 description: Project detail pages set on a full-bleed, slowly breathing WebGL ground, with compressed Archivo declarations and thin tracked chrome floating over it.
