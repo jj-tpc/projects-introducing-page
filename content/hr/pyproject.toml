@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hrattrition"
+dynamic = ["version"]
+description = "HR xlsx → 퇴사 관련 신호 진단(라벨 있을 때 예측) → 결과 엑셀·대시보드 엔진 (claude.ai 스킬 predict_attrition / make_dashboard에 동봉)"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.1",
+  "numpy>=1.26",
+  "openpyxl>=3.1",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+model = ["scikit-learn>=1.4"]
+dev = ["pytest>=8", "scikit-learn>=1.4"]
+
+[project.scripts]
+hrattrition = "hrattrition.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "engine" }
+packages = ["hrattrition"]
+
+[tool.setuptools.dynamic]
+version = { attr = "hrattrition.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
