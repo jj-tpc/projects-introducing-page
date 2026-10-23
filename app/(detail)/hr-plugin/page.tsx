@@ -44,8 +44,7 @@ export default function HrPluginPage() {
   return (
     <>
       <Topbar kind="Plugin" />
-      <main className="page split">
-        <div className="col-left">
+      <main className="page">
           <PageTitle title="HR 리스크 분석 및 퇴사 예측 대시보드" sub="HR Attrition Plugin v0.5.0 · 스킬 2개 + 분석 에이전트 1개 + Python 엔진. HR 엑셀 한 파일로 퇴사 위험을 예측하고 직원 목록 중심 대시보드를 만듭니다." />
 
           <section className="section" id="dashboard">
@@ -64,8 +63,14 @@ export default function HrPluginPage() {
             </div>
           </section>
 
+          <section className="section" id="files">
+            <SectionHead n="02" title="플러그인 파일 · 프롬프트" meta="파일을 고르면 내용이 보입니다" />
+            <p className="lead">플러그인을 이루는 실제 파일 17개입니다. 스킬 문서는 Claude에게 분기와 금지 규칙을 주는 프롬프트이고, 엔진은 사건 라벨 생성과 시간 분할 학습·평가를 맡습니다.</p>
+            <FileFinder files={files} root="hr-attrition" initial="skill/predict_attrition/SKILL.md" />
+          </section>
+
           <section className="section" id="install">
-            <SectionHead n="02" title="다운로드 · 설치 방법" />
+            <SectionHead n="03" title="다운로드 · 설치 방법" />
             <article className="panel">
               <h3>다운로드</h3>
               <p>플러그인 zip은 매니페스트·스킬 2개·에이전트·엔진을 담고 있습니다. claude.ai용 스킬 zip 두 개는 공용 엔진을 각각 동봉해 단독으로 동작합니다. 실제 HR 데이터는 들어 있지 않습니다.</p>
@@ -83,14 +88,6 @@ export default function HrPluginPage() {
               <p><b>Claude.ai</b> 설정 → 기능(Capabilities) → Skills에서 스킬 zip을 각각 업로드합니다.</p>
             </article>
           </section>
-        </div>
-
-        <aside className="col-right">
-          <section className="section" id="files" style={{ paddingTop: "clamp(28px, 4vw, 48px)" }}>
-            <SectionHead n="03" title="플러그인 파일 · 프롬프트" meta="파일을 고르면 내용이 보입니다" />
-            <FileFinder files={files} root="hr-attrition" initial="skill/predict_attrition/SKILL.md" />
-          </section>
-        </aside>
       </main>
     </>
   );
