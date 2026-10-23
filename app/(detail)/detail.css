@@ -65,7 +65,7 @@ html:has(.detail-root) { background: var(--d-bg); color-scheme: dark; }
 .code figcaption .file { color: var(--d-text); }
 .code figcaption .meta { margin-left: auto; }
 .code pre {
-  margin: 0; padding: 18px 20px; overflow: auto; max-height: 560px;
+  margin: 0; padding: 18px 20px; overflow: auto; max-height: 560px; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word;
   font-family: var(--d-mono); font-size: 0.86rem; line-height: 1.65; color: #d6d6d6; tab-size: 4;
 }
 .code.tall pre { max-height: 78vh; }
@@ -163,7 +163,7 @@ html:has(.detail-root) { background: var(--d-bg); color-scheme: dark; }
 .finder-meta { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--d-line); background: #121212; font-family: var(--d-mono); font-size: 0.8rem; color: var(--d-muted); }
 .finder-meta .nm { color: var(--d-text); font-weight: 700; }
 .finder-meta .kind { margin-left: auto; white-space: nowrap; }
-.finder-code { margin: 0; padding: 18px 20px; overflow: auto; flex: 1; min-height: 0; font-family: var(--d-mono); font-size: 0.84rem; line-height: 1.65; color: #d6d6d6; tab-size: 4; background: #000; }
+.finder-code { margin: 0; padding: 18px 20px; overflow: auto; flex: 1; min-height: 0; font-family: var(--d-mono); font-size: 0.84rem; line-height: 1.65; color: #d6d6d6; tab-size: 4; background: #000; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
 .finder-code::-webkit-scrollbar { width: 10px; height: 10px; }
 .finder-code::-webkit-scrollbar-thumb { background: #2a2a2a; border: 2px solid #000; border-radius: 6px; }
 @media (max-width: 760px) {
