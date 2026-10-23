@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Attrition Plugin</title>
+  <meta name="description" content="HR 엑셀로 퇴사 위험을 학습·예측하고 직원 목록 중심 대시보드로 보여 주는 Claude 플러그인 소개와 다운로드" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/portal.css" />
+</head>
+<body>
+  <canvas id="portal" data-ember="0.6" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="topbar">
+    <a class="label" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>프로젝트 소개</a>
+    <span class="label">Plugin <b>· v0.5.0</b></span>
+  </div>
+
+  <ul class="index" data-index aria-label="페이지 색인">
+    <li><a href="#intro" class="on"><span class="n">01</span><span class="t">소개</span></a></li>
+    <li><a href="#parts"><span class="n">02</span><span class="t">구성</span></a></li>
+    <li><a href="#flow"><span class="n">03</span><span class="t">작동</span></a></li>
+    <li><a href="#install"><span class="n">04</span><span class="t">설치</span></a></li>
+  </ul>
+  <div class="scrollrail" aria-hidden="true"><span class="label">Scroll</span><span class="bar"></span></div>
+
+  <main class="page">
+    <section class="hero" id="intro">
+      <h1 class="display"><span>HR</span><span>Attrition</span><span>Plugin</span></h1>
+      <p class="lede">HR 엑셀 파일로 퇴사 위험을 학습·예측하고, 직원 목록 중심의 HR 대시보드로 보여 주는 Claude 플러그인입니다. 스킬 두 개와 분석 에이전트 하나를 한 패키지에 담았습니다.</p>
+      <div class="actions">
+        <a class="btn primary" href="downloads/hr-attrition-plugin.zip" download><span class="ko">플러그인 ZIP 다운로드</span><small>96 KB</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></a>
+        <a class="btn" href="#install"><span class="ko">설치 방법</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="loader" aria-hidden="true"><span class="label">Loader</span><div class="num"><span data-loader>00</span><small>%</small></div></div>
+      <div class="env label">산출물 <b>결과 xlsx + 대시보드 HTML</b></div>
+    </section>
+
+    <section class="section" id="parts">
+      <div class="section-head"><h2>Components<span class="ko">구성 요소</span></h2><span class="label">2 skills · 1 agent</span></div>
+      <div class="panels">
+        <article class="panel"><span class="num label">S1</span><h3 class="code">/predict_attrition</h3><p>과거 스냅샷과 실제 퇴사 이력으로 후보 모델 5개를 비교하고 시간 순으로 평가한 뒤, 고정된 모델로 현재 재직자의 퇴사위험 순위를 만듭니다. 결과는 <code>퇴사위험_결과.xlsx</code>로 남습니다.</p></article>
+        <article class="panel"><span class="num label">S2</span><h3 class="code">/make_dashboard</h3><p>결과 엑셀과 같은 기준일의 원본으로 직원 목록 중심 대시보드를 만듭니다. 외부 리소스가 없는 단일 HTML이며 아티팩트로 바로 봅니다.</p></article>
+        <article class="panel"><span class="num label">A1</span><h3 class="code">hr-analyst</h3><p>고정 모델 평가와 결과물을 읽어 실제 값·범위·한계를 한국어로 설명하는 에이전트입니다. 숫자는 산출물에서만 읽고, 현재 입력으로 재학습하지 않습니다.</p></article>
+      </div>
+
+      <dl class="spec" style="margin-top:14px">
+        <div><dt class="label">종류</dt><dd>Plugin</dd></div>
+        <div><dt class="label">버전</dt><dd>v0.5.0</dd></div>
+        <div><dt class="label">입력</dt><dd>HR xlsx</dd></div>
+        <div><dt class="label">엔진</dt><dd>Python 3.11+</dd></div>
+        <div><dt class="label">저장소</dt><dd class="ko">비공개 · The Prompt Company</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="section-head"><h2>Workflow<span class="ko">작동 순서</span></h2><span class="label">train → run → dashboard</span></div>
+      <div class="panels">
+        <article class="panel"><span class="num label">01</span><h3 class="ko">과거 학습·평가</h3><p>history.json 매니페스트와 과거 스냅샷으로 학습합니다. 기준선, 로지스틱 회귀, HistGradientBoosting 등 후보 5개를 검증 기간의 Precision@K로 비교하고, 선택한 모델을 미래 기간으로 다시 평가합니다. 평가 후 재학습하지 않습니다.</p></article>
+        <article class="panel"><span class="num label">02</span><h3 class="ko">현재 재직자 예측</h3><p>고정 모델로 현재 파일의 점수를 계산합니다. 모델의 회사·퇴사 유형·기간이 질문과 맞는지 검사하고, 상위 K명·다음 K명·나머지로 구간을 나눕니다. 모델이 없으면 명시적으로 요청했을 때만 진단 모드로 실행합니다.</p></article>
+        <article class="panel"><span class="num label">03</span><h3 class="ko">대시보드</h3><p>직원 목록을 먼저 보여 주고, 조직·검색·위험 구간·유지 우선순위·상태 필터를 모든 패널에 똑같이 적용합니다. 담당자·확인 상태·다음 확인일은 브라우저에 저장하고 JSON으로 내보내거나 가져옵니다.</p></article>
+      </div>
+
+      <div class="section-head" style="margin-top:56px"><h2>Dashboard<span class="ko">대시보드 화면</span></h2><span class="label">single html · no cdn</span></div>
+      <ul class="list">
+        <li><span class="k">01</span><span class="t">직원 목록</span><span class="d">실제 값·단위·기간·비교 기준을 근거로 붙인 퇴사위험 순위표</span></li>
+        <li><span class="k">02</span><span class="t">조직별 지표 히트맵</span><span class="d">지표별 전체 명부 백분위. 퇴사위험 기여도가 아님을 화면에 명시</span></li>
+        <li><span class="k">03</span><span class="t">위험 구간 분포</span><span class="d">상위 K · 다음 K · 나머지 구간과 유지 우선순위의 교차표</span></li>
+        <li><span class="k">04</span><span class="t">근무·설문 추이</span><span class="d">월별 연장근로 추이와 최근 설문 차트. 원본이 없으면 이유를 표시</span></li>
+        <li><span class="k">05</span><span class="t">확인 기록</span><span class="d">담당자 · 확인 상태 · 다음 확인일 · 유지 우선순위. 회사별 브라우저 저장, JSON 내보내기·가져오기</span></li>
+        <li><span class="k">06</span><span class="t">공유용 파일</span><span class="d">이름·사번을 가명으로 바꾼 별도 HTML</span></li>
+      </ul>
+
+      <div class="section-head" style="margin-top:56px"><h2>Principles<span class="ko">지키는 원칙</span></h2><span class="label">from the README</span></div>
+      <ul class="list">
+        <li><span class="k">R1</span><span class="t">점수는 순위용</span><span class="d">보정된 퇴사 확률이 아닙니다. 0.7을 "퇴사 확률 70%"라고 말하지 않습니다.</span></li>
+        <li><span class="k">R2</span><span class="t">재학습 금지</span><span class="d">현재 파일의 라벨로 학습과 예측을 동시에 하지 않습니다. 예측 실패를 진단 성공으로 바꾸지 않습니다.</span></li>
+        <li><span class="k">R3</span><span class="t">민감 속성 배제</span><span class="d">민감 속성·병가·설문 미응답은 개인 예측 입력으로 쓰지 않습니다.</span></li>
+        <li><span class="k">R4</span><span class="t">유지 우선순위 분리</span><span class="d">유지 우선순위는 HR이 지정하는 업무 판단이며 퇴사위험 점수와 합치지 않습니다.</span></li>
+        <li><span class="k">R5</span><span class="t">합성 데이터 구분</span><span class="d">동봉 샘플은 처리 경로 검증용입니다. 실제 회사 성능은 실제 과거 데이터로 검증해야 합니다.</span></li>
+      </ul>
+
+      <div class="section-head" style="margin-top:56px"><h2>Triggers<span class="ko">실행 문구</span></h2><span class="label">attach an xlsx</span></div>
+      <ul class="phrases">
+        <li>퇴사 위험 분석해줘</li>
+        <li>누가 그만둘 것 같은지 알려줘</li>
+        <li>리텐션 리스크 뽑아줘</li>
+        <li>이탈 가능성 예측해줘</li>
+        <li>HR 현황 대시보드로 보여줘</li>
+      </ul>
+      <p class="fine">HR 엑셀을 첨부하며 말하면 예측 스킬이, 결과 엑셀이 있으면 대시보드 스킬이 실행됩니다.</p>
+    </section>
+
+    <section class="section" id="install">
+      <div class="section-head"><h2>Install<span class="ko">설치</span></h2><span class="label">plugin or skills</span></div>
+      <div class="twin">
+        <article class="panel"><h3>Claude Code · 플러그인</h3><p>플러그인 ZIP을 풀어 둔 뒤 Claude Code에서 마켓플레이스로 등록하고 설치합니다.</p><pre>/plugin marketplace add &lt;풀어 둔 hr-attrition 폴더&gt;
+/plugin install hr-attrition@tpc-hr</pre><p>엔진은 Python 3.11 이상과 pandas · numpy · openpyxl · scipy · scikit-learn이 필요합니다. 폴더에서 <code>pip install -e .</code> 로 설치합니다.</p></article>
+        <article class="panel"><h3>Claude.ai · 스킬 2개</h3><p>claude.ai에서는 스킬 ZIP을 각각 업로드합니다. 설정 → 기능(Capabilities) → Skills. 두 ZIP 모두 공용 엔진을 동봉하고 있어 단독으로 동작합니다.</p>
+          <div class="actions" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+            <a class="btn" href="downloads/predict_attrition.zip" download>predict_attrition.zip<small>88 KB</small></a>
+            <a class="btn" href="downloads/make_dashboard.zip" download>make_dashboard.zip<small>80 KB</small></a>
+          </div></article>
+      </div>
+      <p class="fine">원본 저장소(github.com/the-prompt-company/hr-plugin)는 비공개이며 The Prompt Company 소유입니다. 배포 ZIP에는 실제 HR 데이터가 들어 있지 않습니다.</p>
+    </section>
+
+    <section class="close">
+      <h2 class="display">Know who to talk to first.</h2>
+      <div class="actions">
+        <a class="btn primary" href="downloads/hr-attrition-plugin.zip" download><span class="ko">hr-attrition-plugin.zip</span><small>96 KB</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></a>
+        <a class="btn" href="index.html"><span class="ko">프로젝트 소개로</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      </div>
+    </section>
+  </main>
+  <script src="assets/portal.js"></script>
+</body>
+</html>

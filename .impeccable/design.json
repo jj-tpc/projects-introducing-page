@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T20:30:00+09:00",
+  "title": "Design System: 프로젝트 소개 (Departure Board)",
+  "extensions": {
+    "colorMeta": {
+      "flap-black": { "role": "neutral", "displayName": "Flap Black", "canonical": "#0B0B0D", "tonalRamp": ["oklch(15% 0.004 285)", "oklch(25% 0.004 285)", "oklch(37% 0.004 285)", "oklch(48% 0.004 285)", "oklch(60% 0.004 285)", "oklch(72% 0.004 285)", "oklch(84% 0.004 285)", "oklch(95% 0.004 285)"] },
+      "plate": { "role": "neutral", "displayName": "Plate", "canonical": "#1B1C21", "tonalRamp": ["oklch(15% 0.008 280)", "oklch(25% 0.008 280)", "oklch(37% 0.008 280)", "oklch(48% 0.008 280)", "oklch(60% 0.008 280)", "oklch(72% 0.008 280)", "oklch(84% 0.008 280)", "oklch(95% 0.008 280)"] },
+      "board-recess": { "role": "neutral", "displayName": "Board Recess", "canonical": "#0e0f12", "tonalRamp": ["oklch(15% 0.006 270)", "oklch(25% 0.006 270)", "oklch(37% 0.006 270)", "oklch(48% 0.006 270)", "oklch(60% 0.006 270)", "oklch(72% 0.006 270)", "oklch(84% 0.006 270)", "oklch(95% 0.006 270)"] },
+      "row-hover": { "role": "neutral", "displayName": "Row Hover", "canonical": "#15161b", "tonalRamp": ["oklch(15% 0.008 275)", "oklch(25% 0.008 275)", "oklch(37% 0.008 275)", "oklch(48% 0.008 275)", "oklch(60% 0.008 275)", "oklch(72% 0.008 275)", "oklch(84% 0.008 275)", "oklch(95% 0.008 275)"] },
+      "wall": { "role": "neutral", "displayName": "Wall", "canonical": "#141518", "tonalRamp": ["oklch(15% 0.006 260)", "oklch(25% 0.006 260)", "oklch(37% 0.006 260)", "oklch(48% 0.006 260)", "oklch(60% 0.006 260)", "oklch(72% 0.006 260)", "oklch(84% 0.006 260)", "oklch(95% 0.006 260)"] },
+      "steel-dark": { "role": "neutral", "displayName": "Steel Dark", "canonical": "#2A2D31", "tonalRamp": ["oklch(15% 0.008 250)", "oklch(25% 0.008 250)", "oklch(37% 0.008 250)", "oklch(48% 0.008 250)", "oklch(60% 0.008 250)", "oklch(72% 0.008 250)", "oklch(84% 0.008 250)", "oklch(95% 0.008 250)"] },
+      "steel": { "role": "neutral", "displayName": "Steel", "canonical": "#5B5E63", "tonalRamp": ["oklch(15% 0.01 250)", "oklch(25% 0.01 250)", "oklch(37% 0.01 250)", "oklch(48% 0.01 250)", "oklch(60% 0.01 250)", "oklch(72% 0.01 250)", "oklch(84% 0.01 250)", "oklch(95% 0.01 250)"] },
+      "steel-light": { "role": "neutral", "displayName": "Steel Light", "canonical": "#A7AAAF", "tonalRamp": ["oklch(15% 0.008 240)", "oklch(25% 0.008 240)", "oklch(37% 0.008 240)", "oklch(48% 0.008 240)", "oklch(60% 0.008 240)", "oklch(72% 0.008 240)", "oklch(84% 0.008 240)", "oklch(95% 0.008 240)"] },
+      "white": { "role": "neutral", "displayName": "Board White", "canonical": "#F2F2F2", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(37% 0 0)", "oklch(48% 0 0)", "oklch(60% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "amber": { "role": "primary", "displayName": "Signal Amber", "canonical": "#FFB000", "tonalRamp": ["oklch(15% 0.05 78)", "oklch(25% 0.08 78)", "oklch(37% 0.11 78)", "oklch(48% 0.14 78)", "oklch(60% 0.16 78)", "oklch(72% 0.17 78)", "oklch(84% 0.16 78)", "oklch(95% 0.08 78)"] },
+      "amber-edge": { "role": "primary", "displayName": "Amber Edge", "canonical": "#c98a00", "tonalRamp": ["oklch(15% 0.05 78)", "oklch(25% 0.08 78)", "oklch(37% 0.11 78)", "oklch(48% 0.14 78)", "oklch(60% 0.15 78)", "oklch(72% 0.15 78)", "oklch(84% 0.14 78)", "oklch(95% 0.07 78)"] },
+      "red": { "role": "tertiary", "displayName": "Cancel Red", "canonical": "#B00020", "tonalRamp": ["oklch(15% 0.07 25)", "oklch(25% 0.12 25)", "oklch(37% 0.17 25)", "oklch(48% 0.2 25)", "oklch(60% 0.2 25)", "oklch(72% 0.16 25)", "oklch(84% 0.1 25)", "oklch(95% 0.03 25)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Latin plate)", "purpose": "Page title plates, one plate per word; Barlow Condensed 600 uppercase." },
+      "display-hangul": { "displayName": "Display (Hangul plate)", "purpose": "Page title plates when the word is Korean; Gothic A1 800, no case change." },
+      "headline": { "displayName": "Headline", "purpose": "Project name in a departure row; continuous type, never plated." },
+      "title": { "displayName": "Title", "purpose": "Step and section labels in detail-page rows; install grid h3 at 1rem." },
+      "body": { "displayName": "Body", "purpose": "Base body; lede at 1.05rem/1.75 with 60ch measure; panel prose 0.95rem/1.7 in steel-light." },
+      "body-note": { "displayName": "Body note", "purpose": "One-line description under each row name; fine print at 0.86rem/1.7." },
+      "label": { "displayName": "Label (Hangul)", "purpose": "Column heads, spec terms, panel heads; tracked 0.2em in steel-light." },
+      "label-latin": { "displayName": "Label (Latin)", "purpose": "Rail text and the Latin twin on column/panel heads; uppercase 0.16em." },
+      "plate": { "displayName": "Plate face", "purpose": "The face of every flap tile; sm 0.98rem/700, default 0.92rem/600, lg 1.25rem; numerals tabular 0.12em; Hangul plates Gothic A1 800 0.04em." },
+      "mono": { "displayName": "Mono", "purpose": "The install folder tree only." }
+    },
+    "shadows": [
+      { "name": "bezel-hang", "value": "0 30px 60px -28px rgba(0,0,0,0.9), 0 2px 0 rgba(255,255,255,0.08) inset", "purpose": "The bezel only; the single drop shadow in the system." },
+      { "name": "board-edge", "value": "0 0 0 1px rgba(255,255,255,0.05) inset", "purpose": "The board face only, with its 1px #000 border." }
+    ],
+    "motion": [
+      { "name": "flip", "value": "190ms cubic-bezier(0.3, 0, 0.2, 1)", "purpose": "Flap plate fold: rotateX 0 to -88deg at 40% (brightness 0.6), jump to +88deg at 41%, back to 0; face text swaps at 70ms." },
+      { "name": "cascade-step", "value": "150ms", "purpose": "Interval between scramble flips on load; 2-3 steps per plate." },
+      { "name": "cascade-offset", "value": "100ms + 120ms/group + 60ms/flap + 90ms/plate", "purpose": "Load cascade stagger across [data-cascade] groups." },
+      { "name": "row-hover-bg", "value": "140ms ease-out", "purpose": "Departure row background to row-hover." },
+      { "name": "chevron-slide", "value": "180ms cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "Row chevron moves 4px right and turns amber on hover/focus." },
+      { "name": "plate-button-lift", "value": "160ms cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "Primary plate button translateY(-1px) and brightness 1.06 on hover." },
+      { "name": "reduced-motion", "value": "animation: none; transition: none", "purpose": "Global under prefers-reduced-motion: reduce; plates show final text immediately." }
+    ],
+    "breakpoints": [
+      { "name": "narrow-table", "value": "999px", "purpose": "Type/link/status plates leave the grid and become a nowrap strip under the row note." },
+      { "name": "phone", "value": "719px", "purpose": "Latin twins on column heads hide; headline 1.15rem; plates shrink one step; spec grid 2 columns; install grid stacks." },
+      { "name": "phone-narrow", "value": "479px", "purpose": "Korean twin on rail labels hides." }
+    ],
+    "assets": {
+      "rasters": "none shipped; the surface has no images",
+      "fonts": "Google Fonts: Barlow Condensed 500/600/700, Gothic A1 400/700/800"
+    }
+  },
+  "components": [
+    {
+      "name": "Flap plate",
+      "kind": "custom",
+      "refersTo": "flap-plate",
+      "description": "The atom: one dark tile per word or value, with sheen gradient and a hairline split across the middle. Variants: .ds-flap-sm/.ds-flap-lg sizes, .ds-k Hangul face, .ds-n numeric, .ds-amber / .ds-dim color.",
+      "html": "<span class=\"ds-flap ds-flap-sm\"><span class=\"ds-c\"><span class=\"ds-f\">SKILL</span></span><span class=\"ds-c ds-k\"><span class=\"ds-f\">열람</span></span><span class=\"ds-c ds-n\"><span class=\"ds-f\">20:11</span></span><span class=\"ds-c ds-k ds-amber\"><span class=\"ds-f\">준비 중</span></span><span class=\"ds-c ds-dim\"><span class=\"ds-f\">PLUGIN</span></span></span> <span class=\"ds-flap ds-flap-lg\"><span class=\"ds-c ds-n\"><span class=\"ds-f\">01</span></span></span>",
+      "css": ".ds-flap { display: inline-flex; flex-wrap: wrap; gap: 6px; --ch: 1.6rem; --fs: 0.92rem; --px: 0.55em; vertical-align: middle; perspective: 400px; } .ds-flap-sm { --ch: 1.6rem; --fs: 0.98rem; } .ds-flap-sm .ds-c { font-weight: 700; } .ds-flap-sm .ds-c::after { background: rgba(0,0,0,0.55); } .ds-flap-lg { --ch: 2.1rem; --fs: 1.25rem; } .ds-c { position: relative; display: inline-grid; place-items: center; height: var(--ch); padding: 0 var(--px); background: var(--cell, #1B1C21); color: var(--white, #F2F2F2); font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: var(--fs); letter-spacing: 0.08em; line-height: 1; text-transform: uppercase; white-space: nowrap; transform-origin: 50% 50%; transform-style: preserve-3d; } .ds-f { position: relative; z-index: 1; } .ds-c::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent 48%, rgba(0,0,0,0.3)); pointer-events: none; } .ds-c::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,0.9); z-index: 2; } .ds-k { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: none; } .ds-n { font-variant-numeric: tabular-nums; letter-spacing: 0.12em; } .ds-amber { color: var(--amber, #FFB000); } .ds-dim { color: var(--steel-light, #A7AAAF); } .ds-c:hover { animation: ds-flip 190ms cubic-bezier(0.3, 0, 0.2, 1); } @keyframes ds-flip { 0% { transform: rotateX(0deg); } 40% { transform: rotateX(-88deg); filter: brightness(0.6); } 41% { transform: rotateX(88deg); } 100% { transform: rotateX(0deg); filter: brightness(1); } }"
+    },
+    {
+      "name": "Primary plate button",
+      "kind": "button",
+      "refersTo": "button-plate",
+      "description": "Amber stamped plate, 48px tall, condensed uppercase lettering with optional Korean label and size note; the download action.",
+      "html": "<a class=\"ds-plate\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10l5 5 5-5M5 20h14\"/></svg><span class=\"ds-ko\">ZIP 다운로드</span><small>2.6 MB</small></a>",
+      "css": ".ds-plate { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; background: var(--amber, #FFB000); color: var(--flap, #0B0B0D); text-decoration: none; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid #c98a00; border-radius: 0; transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 140ms; } .ds-plate .ds-ko { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.08em; } .ds-plate small { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.1em; opacity: 0.8; } .ds-plate svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: square; } .ds-plate:hover { filter: brightness(1.06); transform: translateY(-1px); } .ds-plate:active { transform: translateY(0); } .ds-plate:focus-visible { outline: 2px solid var(--white, #F2F2F2); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary plate button",
+      "kind": "button",
+      "refersTo": "button-plate-secondary",
+      "description": "Transparent plate with a steel border; in-page jumps and lesser actions.",
+      "html": "<a class=\"ds-plate-secondary\" href=\"#\"><span class=\"ds-ko\">설치 방법</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-plate-secondary { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 18px; background: transparent; color: var(--white, #F2F2F2); text-decoration: none; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--steel, #5B5E63); border-radius: 0; transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); } .ds-plate-secondary .ds-ko { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.08em; } .ds-plate-secondary svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: square; } .ds-plate-secondary:hover { border-color: var(--steel-light, #A7AAAF); transform: translateY(-1px); } .ds-plate-secondary:active { transform: translateY(0); } .ds-plate-secondary:focus-visible { outline: 2px solid var(--white, #F2F2F2); outline-offset: 2px; }"
+    },
+    {
+      "name": "Rail",
+      "kind": "nav",
+      "refersTo": "rail",
+      "description": "Steel rail across the top (and bottom) of the board: menu link on the left, HH:MM clock plate on the right.",
+      "html": "<div class=\"ds-rail\"><a href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg>Menu <span class=\"ds-rail-ko\">· 메뉴</span></a><span class=\"ds-rail-clock\"><span class=\"ds-rail-c\">20:11</span></span></div>",
+      "css": ".ds-rail { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: linear-gradient(180deg, #202227, #17181c); border-bottom: 1px solid #000; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel-light, #A7AAAF); } .ds-rail-ko { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.18em; } .ds-rail a { color: var(--steel-light, #A7AAAF); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; } .ds-rail a:hover { color: var(--white, #F2F2F2); } .ds-rail a:focus-visible { outline: 2px solid var(--amber, #FFB000); outline-offset: 2px; } .ds-rail svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: square; } .ds-rail-c { position: relative; display: inline-grid; place-items: center; height: 1.6rem; padding: 0 0.55em; background: var(--cell, #1B1C21); color: var(--white, #F2F2F2); font-weight: 700; font-size: 0.98rem; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; line-height: 1; } .ds-rail-c::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent 48%, rgba(0,0,0,0.3)); } .ds-rail-c::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,0.55); }"
+    },
+    {
+      "name": "Departure row",
+      "kind": "custom",
+      "refersTo": "departure-row",
+      "description": "The row is the control: number plate, name + note, type/link/status plates, chevron. Hover lifts the background one step and slides the chevron.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-num\">01</span><span class=\"ds-row-name\"><span class=\"ds-row-t\">뉴스 보고서 PDF 생성</span><span class=\"ds-row-note\">기사 URL 하나로 1~2쪽 리서치 노트 PDF를 만드는 Claude Skill</span></span><span class=\"ds-row-p ds-row-dim\">SKILL</span><span class=\"ds-row-p ds-row-k\">ZIP 다운로드</span><span class=\"ds-row-p ds-row-k\">열람</span><span class=\"ds-row-go\"><svg viewBox=\"0 0 24 24\"><path d=\"M9 5l7 7-7 7\"/></svg></span></a>",
+      "css": ".ds-row { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) 6.2rem 9.5rem 5rem 1.4rem; align-items: center; column-gap: 16px; padding: 18px 16px; background: var(--flap, #0B0B0D); border-top: 1px solid var(--steel-dark, #2A2D31); color: var(--white, #F2F2F2); text-decoration: none; font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; transition: background 140ms ease-out; } .ds-row:hover, .ds-row:focus-visible { background: #15161b; outline: 2px solid var(--amber, #FFB000); outline-offset: -2px; } .ds-row:hover { outline: none; } .ds-row-num, .ds-row-p { position: relative; display: inline-grid; place-items: center; justify-self: start; height: 1.6rem; padding: 0 0.55em; background: var(--cell, #1B1C21); font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.98rem; letter-spacing: 0.08em; line-height: 1; text-transform: uppercase; white-space: nowrap; } .ds-row-num { height: 2.1rem; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; } .ds-row-num::before, .ds-row-p::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent 48%, rgba(0,0,0,0.3)); } .ds-row-num::after, .ds-row-p::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,0.9); } .ds-row-k { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: none; } .ds-row-dim { color: var(--steel-light, #A7AAAF); } .ds-row-name { min-width: 0; } .ds-row-t { display: block; font-weight: 800; font-size: 1.3rem; line-height: 1.3; letter-spacing: -0.005em; text-wrap: balance; } .ds-row-note { display: block; margin-top: 5px; font-weight: 400; font-size: 0.88rem; line-height: 1.55; letter-spacing: 0.01em; color: var(--steel-light, #A7AAAF); } .ds-row-go { justify-self: end; color: var(--steel-light, #A7AAAF); transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), color 140ms; } .ds-row-go svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: square; } .ds-row:hover .ds-row-go, .ds-row:focus-visible .ds-row-go { transform: translateX(4px); color: var(--amber, #FFB000); }"
+    },
+    {
+      "name": "Column heads",
+      "kind": "custom",
+      "refersTo": "column-heads",
+      "description": "Letterspaced Korean column labels with a dimmed Latin twin, between two steel rules.",
+      "html": "<div class=\"ds-cols\"><span>번호</span><span>프로젝트<span class=\"ds-en\">Project</span></span><span>종류<span class=\"ds-en\">Type</span></span><span>링크<span class=\"ds-en\">Link</span></span><span>상태<span class=\"ds-en\">Status</span></span><span></span></div>",
+      "css": ".ds-cols { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) 6.2rem 9.5rem 5rem 1.4rem; align-items: center; column-gap: 16px; padding: 9px 16px; background: var(--flap, #0B0B0D); border-top: 1px solid var(--steel-dark, #2A2D31); border-bottom: 1px solid var(--steel-dark, #2A2D31); font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.2em; color: var(--steel-light, #A7AAAF); } .ds-en { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.16em; margin-left: 6px; opacity: 0.7; }"
+    },
+    {
+      "name": "Panel head",
+      "kind": "card",
+      "refersTo": "panel-head",
+      "description": "Recessed section head on the detail page: Korean label left, uppercase Latin twin right, baseline-aligned.",
+      "html": "<div class=\"ds-panel-head\"><span>기본 정보</span><span class=\"ds-panel-en\">Overview</span></div>",
+      "css": ".ds-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 16px; background: #0e0f12; border-top: 1px solid var(--steel-dark, #2A2D31); border-bottom: 1px solid var(--steel-dark, #2A2D31); font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--steel-light, #A7AAAF); } .ds-panel-en { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }"
+    },
+    {
+      "name": "Phrase chip",
+      "kind": "chip",
+      "refersTo": "phrase-chip",
+      "description": "Quoted trigger phrase on the board face with a 1px steel-dark border; static.",
+      "html": "<ul class=\"ds-phrases\"><li>이 기사 PDF로 요약해줘</li><li>summarize this article as a PDF</li></ul>",
+      "css": ".ds-phrases { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 16px; list-style: none; background: var(--flap, #0B0B0D); font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; } .ds-phrases li { border: 1px solid var(--steel-dark, #2A2D31); padding: 7px 12px; font-size: 0.9rem; color: var(--white, #F2F2F2); } .ds-phrases li::before { content: '“'; color: var(--steel-light, #A7AAAF); margin-right: 2px; } .ds-phrases li::after { content: '”'; color: var(--steel-light, #A7AAAF); margin-left: 2px; }"
+    },
+    {
+      "name": "Spec grid",
+      "kind": "card",
+      "refersTo": "panel-head",
+      "description": "Definition grid of flap-black cells on 1px steel-dark gutters; term as Label, value as a small plate.",
+      "html": "<dl class=\"ds-spec\"><div><dt>종류</dt><dd><span class=\"ds-spec-p\">SKILL</span></dd></div><div><dt>입력</dt><dd><span class=\"ds-spec-p ds-spec-k\">기사 URL</span></dd></div><div><dt>상태</dt><dd><span class=\"ds-spec-p ds-spec-k\">열람</span></dd></div></dl>",
+      "css": ".ds-spec { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0; background: var(--steel-dark, #2A2D31); border: 1px solid var(--steel-dark, #2A2D31); font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; } .ds-spec > div { background: var(--flap, #0B0B0D); padding: 12px 14px; } .ds-spec dt { margin: 0 0 8px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.18em; color: var(--steel-light, #A7AAAF); } .ds-spec dd { margin: 0; } .ds-spec-p { position: relative; display: inline-grid; place-items: center; height: 1.6rem; padding: 0 0.55em; background: var(--cell, #1B1C21); color: var(--white, #F2F2F2); font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 0.98rem; letter-spacing: 0.08em; line-height: 1; text-transform: uppercase; white-space: nowrap; } .ds-spec-p::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent 48%, rgba(0,0,0,0.3)); } .ds-spec-p::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,0.55); } .ds-spec-k { font-family: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 800; letter-spacing: 0.04em; text-transform: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Concourse Departure Board",
+    "overview": "The whole surface is one object: a black split-flap board set in a brushed-steel bezel, hung on a near-black wall. Everything the visitor reads is either a flap plate (a single dark tile carrying one word or one value, with a hairline split across its middle) or continuous type printed on the board between steel rules. There are no cards, no pills, no hero gradient, no avatars. The three projects are three fixed rows of a departures table, and each row is itself the control: clicking a row departs to that project. The detail page is the same board reading a route card: the same rails, plates, rules, and one amber plate button.\n\nDensity is instrument-grade, not editorial-loose. Rows are 18px tall of padding on either side of a single 1px steel rule; column heads are tiny letterspaced Korean labels with a dimmed Latin twin. The palette is almost entirely greys and off-white; amber exists to say \"not yet\" (준비 중 / 대기) and to make the one download plate the brightest thing on the page. Red is reserved in the stylesheet for a cancelled state and is not yet used anywhere.\n\nMotion is the board's own mechanism and nothing else: plates fold over on rotateX in 190ms, scrambling through two or three random glyphs before settling, in a 90ms-per-plate cascade on load. Hovering a row re-folds its type, link, and status plates once. Under prefers-reduced-motion the board simply shows its final state.",
+    "keyCharacteristics": [
+      "One object on a dark wall: steel bezel, black board, max width 960px, no page chrome outside it.",
+      "One plate per word or value; row names and prose are continuous Gothic A1, never per-character cells.",
+      "Barlow Condensed (uppercase, tracked) for Latin and numerals on plates and rails; Gothic A1 for every Korean word.",
+      "Amber is the only chromatic voice at rest; it means \"pending\" on plates and \"primary action\" on buttons.",
+      "Zero border radius anywhere. Depth comes from the bezel's one soft drop shadow and the plate's gradient sheen, not from card shadows.",
+      "Hairline 1px steel rules do all structural division; grids are built from 1px gaps on a steel-dark background."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Amber is the only hue on the board at rest. It appears on a plate only to mean \"not yet\" and on a button only to mean \"the primary action\". Nothing decorative is amber.", "section": "colors" },
+      { "name": "The Steel Does the Dividing Rule", "body": "Separation is a 1px steel-dark rule or a 1px gutter of steel-dark behind flap-black cells. No borders lighter than steel, no colored dividers, no spacing-only separation between rows.", "section": "colors" },
+      { "name": "The One Plate Per Word Rule", "body": "A flap plate carries one word or one whole value (ZIP 다운로드, A4 1-2쪽, 20:11). Per-character cells were tried and rejected for legibility; never split a word into letter tiles.", "section": "typography" },
+      { "name": "The Script Picks the Face Rule", "body": "Barlow Condensed for Latin and numerals, Gothic A1 for Hangul, decided per plate by content. Do not set Korean in the condensed face or Latin plate text in Gothic A1.", "section": "typography" },
+      { "name": "The Plain Words Rule", "body": "UI labels are ordinary words (메뉴, 번호, 프로젝트, 종류, 링크, 상태, 열람, 대기, 준비 중). The metaphor lives in the materials, never in the vocabulary.", "section": "typography" },
+      { "name": "The One Shadow Rule", "body": "The bezel casts the only shadow. Cards, plates, buttons, and panels inside the board never carry a drop shadow; they are flat on the board face and separated by steel rules.", "section": "elevation" },
+      { "name": "The Sheen Is Not a Shadow Rule", "body": "The flap plate's gradient and split line are its material. Do not add them to buttons, chips, or panels, and do not remove them from a plate.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every new screen inside the same bezel + board object (max-width: 960px, 10px steel bezel, flap-black board) and open it with the rail and a plated title.",
+      "Do render any short categorical value (status, type, number, time, format) as a single flap plate per word/value, and any name or sentence as continuous Gothic A1.",
+      "Do keep Barlow Condensed for Latin/numerals and Gothic A1 for Hangul, chosen per plate by script; keep plate Latin uppercase and tracked (0.08em; numerals 0.12em tabular).",
+      "Do divide with 1px steel-dark rules and 1px-gutter grids; keep 16px as the panel padding and 18px as the row padding.",
+      "Do reserve amber for pending-state plates and the primary plate button, and red plates for a cancelled state when one exists.",
+      "Do carry the .sr hidden copy and aria-hidden plates whenever a plate is built, and honor prefers-reduced-motion by showing final text immediately.",
+      "Do make a whole row the link when a list item has one destination, with the chevron as its only affordance."
+    ],
+    "donts": [
+      "Don't add border radius to anything; the system is 0 everywhere, including buttons, chips, and the lamp.",
+      "Don't add drop shadows inside the board; the bezel's hang is the only shadow (The One Shadow Rule).",
+      "Don't split a word into per-character flap cells; one plate per word or value (The One Plate Per Word Rule).",
+      "Don't use card grids, pill buttons, gradient heroes, glass panels, or avatars; the purple-gradient/glass look is the confirmed anti-reference.",
+      "Don't introduce a second accent hue or use amber decoratively; amber on a plate always means \"not yet\".",
+      "Don't replace plain UI words with metaphor vocabulary (no \"platform\", \"departures\", \"gate\" as labels); 메뉴, 번호, 프로젝트, 종류, 링크, 상태 are the words.",
+      "Don't put the plate sheen or split line on buttons, chips, or panels, and don't ship a plate without them."
+    ]
+  }
+}

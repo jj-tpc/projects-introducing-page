@@ -1,0 +1,10 @@
+# impeccable working files (keep design records, drop captures/sketches/session logs)
+.impeccable/review/
+.impeccable/sketches/
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/build/
+.impeccable/live/
+.DS_Store
+Thumbs.db
+.impeccable/hook.cache.json
