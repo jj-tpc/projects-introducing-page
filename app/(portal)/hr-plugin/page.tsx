@@ -122,7 +122,7 @@ export default function HrPluginPage() {
           <h2 className="display">Know who to talk to first.</h2>
           <div className="actions">
             <a className="btn primary" href={ZIP} download><span className="ko">hr-attrition-plugin.zip</span><small>96 KB</small><IconDownload /></a>
-            <Link className="btn" href="/"><span className="ko">프로젝트 소개로</span><IconBackLong /></Link>
+            <Link className="btn" href="/examples"><span className="ko">산출물 예시로</span><IconBackLong /></Link>
           </div>
         </section>
       </main>

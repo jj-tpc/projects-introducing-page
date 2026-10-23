@@ -103,7 +103,7 @@ export default function NewsReadingHelperPage() {
           <h2 className="display">Read the news, keep the note.</h2>
           <div className="actions">
             <a className="btn primary" href={ZIP} download><span className="ko">news-reading-helper.zip</span><small>2.6 MB</small><IconDownload /></a>
-            <Link className="btn" href="/"><span className="ko">프로젝트 소개로</span><IconBackLong /></Link>
+            <Link className="btn" href="/examples"><span className="ko">산출물 예시로</span><IconBackLong /></Link>
           </div>
         </section>
       </main>

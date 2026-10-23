@@ -18,7 +18,7 @@ export const IconDownload = () => (
 export function Topbar({ status }: { status: React.ReactNode }) {
   return (
     <div className="topbar">
-      <Link className="label" href="/"><IconBack />프로젝트 소개</Link>
+      <Link className="label" href="/examples"><IconBack />산출물 예시</Link>
       <span className="label">{status}</span>
     </div>
   );

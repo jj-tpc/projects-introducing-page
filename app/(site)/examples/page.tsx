@@ -42,13 +42,16 @@ const projects = [
   },
 ];
 
-export default function Home() {
+export const metadata = { title: "산출물 예시" };
+
+export default function ExamplesPage() {
   return (
     <div className={styles.wrap}>
       <main className={styles.main}>
         <header className={styles.header}>
           <div className={styles.avatar} aria-hidden="true">🚀</div>
-          <h1 className={styles.title}>프로젝트 소개</h1>
+          <h1 className={styles.title}>산출물 예시</h1>
+          <p className={styles.sub}>직접 만든 Claude 스킬·에이전트·플러그인을 바로 열어 보거나 내려받을 수 있습니다.</p>
         </header>
 
         <nav className={styles.nav} aria-label="프로젝트 링크">

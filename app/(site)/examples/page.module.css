@@ -9,7 +9,7 @@
   --muted: #a0a6b3;
   --accent: #8b8cf8;
 
-  min-height: 100svh;
+  min-height: calc(100svh - 64px);
   background: var(--bg);
   color: var(--text);
   display: flex;
@@ -69,6 +69,7 @@
   background: linear-gradient(135deg, #6366f1, #ec4899);
   box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
 }
+.sub { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
 .title {
   margin: 0;
   font-size: 22px;
