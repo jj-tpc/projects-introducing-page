@@ -9,16 +9,17 @@
   --lilac-fill: #7D7FFF;
   --mist-dim: rgba(191, 210, 255, 0.62);
   --line: rgba(191, 210, 255, 0.18);
-  --display: "Archivo", "Arial Narrow", sans-serif;
-  --label: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --display: var(--font-archivo), "Arial Narrow", sans-serif;
+  --label: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --body: var(--font-noto), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-html { background: var(--void); scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
+html:has(.portal-root) { background: var(--void); }
+.portal-root {
   margin: 0;
   min-height: 100svh;
   background: var(--void);
@@ -29,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-html.has-cursor body, html.has-cursor a { cursor: none; }
+html.has-cursor .portal-root, html.has-cursor .portal-root a { cursor: none; }
 
 ::selection { background: var(--ember); color: var(--void); }
 :focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
@@ -39,7 +40,8 @@ html.has-cursor body, html.has-cursor a { cursor: none; }
 * { scrollbar-color: var(--night) var(--void); scrollbar-width: thin; }
 
 /* ---- living ground ---- */
-#portal { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
+#portal { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; opacity: 0; transition: opacity 1200ms ease-out; }
+html.has-gl #portal { opacity: 1; }
 .grain {
   position: fixed; inset: -50%; z-index: 1; pointer-events: none; opacity: 0.09;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -121,8 +123,6 @@ html.past-hero .scrollrail { opacity: 0; pointer-events: none; }
 }
 .hero h1 { margin: 0; font-size: clamp(72px, 11.5vw, 172px); max-width: 12ch; }
 .hero h1 span { display: block; }
-.hero h1, .hero .lede, .hero .actions { transition: opacity 900ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1); }
-html.is-loading .hero h1, html.is-loading .hero .lede, html.is-loading .hero .actions { opacity: 0; transform: translateY(24px); }
 .hero .lede { transition-delay: 120ms; }
 .hero .actions { transition-delay: 240ms; }
 .hero .lede {
@@ -218,6 +218,6 @@ html.is-loading .hero h1, html.is-loading .hero .lede, html.is-loading .hero .ac
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero h1, .hero .lede, .hero .actions { opacity: 1; transform: none; transition: none; }
-  *, *::before, *::after { transition: none !important; }
+  .portal-root *, .portal-root *::before, .portal-root *::after { transition: none !important; }
+  html.has-gl #portal { transition: none; }
 }

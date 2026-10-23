@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-static HTML/CSS (incumbent: two hand-written HTML pages, no framework, no build step)
+Next.js 16 App Router + TypeScript (2026-10-23 사용자 요청으로 정적 HTML에서 전환). 라우트: / (링크트리 메인), /news-reading-helper, /hr-plugin. 공용 포털 스타일은 app/(portal)/portal.css, 셰이더·커서·로더는 components/PortalEffects.tsx(클라이언트 컴포넌트). 배포 zip은 public/downloads/.
 
 ## Users
 
@@ -24,16 +24,16 @@ static HTML/CSS (incumbent: two hand-written HTML pages, no framework, no build 
 
 ## Operating Context
 
-- 메인 페이지(index.html): 프로젝트 세 개가 세로로 나열된 링크 허브. 이 세로 3개 구조는 사용자가 유지하기로 확정함.
-- 프로젝트 1 "News Reading Helper" 소개 페이지(news-reading-helper.html): 스킬 설명과 zip 다운로드(downloads/news-reading-helper.zip, 2.6MB). 스킬 내용의 근거는 zip 안의 SKILL.md.
+- 메인 페이지(/): 프로젝트 세 개가 세로로 나열된 링크 허브. 이 세로 3개 구조는 사용자가 유지하기로 확정함.
+- 프로젝트 1 "News Reading Helper" 소개 페이지(/news-reading-helper): 스킬 설명과 zip 다운로드(public/downloads/news-reading-helper.zip, 2.6MB). 스킬 내용의 근거는 zip 안의 SKILL.md.
 - 프로젝트 2 "동국대 챗봇 에이전트": 외부 페이지 https://dongguk.the-prompt.me/ 로 이동.
-- 프로젝트 3 "HR 리스크 분석 및 예측 대시보드 플러그인" 소개 페이지(hr-plugin.html): 비공개 저장소 github.com/the-prompt-company/hr-plugin (v0.5.0, Proprietary)의 README·SKILL.md·plugin.json을 근거로 작성. 배포 zip 세 개(downloads/hr-attrition-plugin.zip, predict_attrition.zip, make_dashboard.zip)는 저장소의 make_skill_zip.py와 플러그인 폴더에서 생성.
+- 프로젝트 3 "HR 리스크 분석 및 예측 대시보드 플러그인" 소개 페이지(/hr-plugin): 비공개 저장소 github.com/the-prompt-company/hr-plugin (v0.5.0, Proprietary)의 README·SKILL.md·plugin.json을 근거로 작성. 배포 zip 세 개(public/downloads/hr-attrition-plugin.zip, predict_attrition.zip, make_dashboard.zip)는 저장소의 make_skill_zip.py와 플러그인 폴더에서 생성.
 - 열람 환경: 발표 직후 휴대폰, 또는 강의실 노트북. 조명은 통제되지 않음.
 
 ## Capabilities and Constraints
 
-- 정적 파일만 사용. 서버, 빌드, 프레임워크 없음.
-- 외부 리소스는 Google Fonts 정도만 허용.
+- Next.js 정적 프리렌더(모든 라우트 ○ Static). 서버 로직 없음.
+- 폰트는 next/font/google(Archivo variable wdth 축, Noto Sans KR)로 셀프호스팅. 그 밖의 외부 리소스 없음.
 - 작성자 이름·소속은 표기하지 않기로 확정함.
 - 언어: 한국어 UI. 프로젝트 고유명(News Reading Helper 등)은 영문 유지.
 
@@ -44,7 +44,7 @@ static HTML/CSS (incumbent: two hand-written HTML pages, no framework, no build 
 
 ## Evidence on Hand
 
-- downloads/news-reading-helper.zip 과 그 안의 SKILL.md (실제 스킬 문서).
+- public/downloads/news-reading-helper.zip 과 그 안의 SKILL.md (실제 스킬 문서).
 - 동국대 챗봇 실 서비스 URL.
 - 프로젝트 3: 저장소 소스와 배포 zip. 대시보드 스크린샷은 없음(실제 HR 데이터 없이 생성하지 말 것).
 - 사용자 사진, 로고, 소속 자산 없음.
