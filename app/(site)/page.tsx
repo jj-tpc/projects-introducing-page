@@ -1,15 +1,19 @@
-import Link from "next/link";
+import IntroDeck from "@/components/IntroDeck";
+import { publicExists } from "@/components/detail-ui";
 import styles from "./site.module.css";
 
+export const metadata = { title: "소개" };
+
+const DECK = "intro/ai-challengers-1.html";
+
 export default function LandingPage() {
-  return (
-    <main className={styles.placeholder}>
-      <h1>소개</h1>
-      <p>상세페이지(랜딩 페이지) 소개가 들어갈 자리입니다. 핵심 키워드, 산출물 예시, 컨설팅 수행사례로 이어지는 홈페이지의 첫 화면입니다.</p>
-      <span className={styles.note}>랜딩 페이지 내용은 아직 준비 중입니다.</span>
-      <div>
-        <Link className={styles.cta} href="/examples">산출물 예시 보기 →</Link>
-      </div>
-    </main>
-  );
+  if (!publicExists(DECK)) {
+    return (
+      <main className={styles.placeholder}>
+        <h1>소개</h1>
+        <p>소개 슬라이드 파일을 아직 받지 못했습니다. public/{DECK} 에 넣으면 이 자리에 표시됩니다.</p>
+      </main>
+    );
+  }
+  return <IntroDeck src={`/${DECK}`} title="AI Challengers 1기 프로그램 소개" />;
 }
