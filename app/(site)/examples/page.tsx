@@ -49,7 +49,6 @@ export default function ExamplesPage() {
     <div className={styles.wrap}>
       <main className={styles.main}>
         <header className={styles.header}>
-          <div className={styles.avatar} aria-hidden="true">🚀</div>
           <h1 className={styles.title}>AI 챌린저스 1기 예상 산출물</h1>
           <p className={styles.sub}>더 프롬프트 컴퍼니에서 실제 수행한 AI 산출물 예시입니다.</p>
         </header>
