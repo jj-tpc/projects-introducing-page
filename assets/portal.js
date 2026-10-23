@@ -31,20 +31,25 @@
     ' vec3 ink=vec3(.075,.086,.169);',
     ' vec3 lilac=vec3(.416,.424,.965);',
     ' vec3 ember=vec3(1.,.416,.239);',
-    ' vec3 col=mix(voidc,ink,n1*.7);',
+    ' vec3 col=mix(voidc,ink,n1*.35);',
     ' col+=lilac*fil*.5;',
-    ' col+=lilac*fil2*.16;',
-    ' float emberMask=smoothstep(.1,.9,uv.x+.2)*smoothstep(.2,-.6,uv.y)*uEmber;',
-    ' col+=ember*fil*emberMask*.8;',
+    ' col+=lilac*fil2*.08;',
+    ' float emberMask=smoothstep(.45,.95,gl_FragCoord.x/uRes.x)*smoothstep(.15,-.45,uv.y)*uEmber;',
+    ' float n3=fbm(q*2.2+vec2(3.1,-1.7)+vec2(-t*.5,t*.3));',
+    ' float emb=smoothstep(.47,.55,n3)*smoothstep(.70,.59,n3)*emberMask;',
+    ' col=mix(col,ember,clamp(emb,0.,1.));',
+    ' col+=ember*emberMask*n3*.08;',
     ' col+=lilac*exp(-d*d*14.)*.12;',
     ' float vig=1.-smoothstep(.5,1.15,length(uv));',
-    ' col*=.75+.35*vig;',
+    ' col*=.85+.15*vig;',
+    ' col=mix(col,voidc,.65*smoothstep(0.,900.,uScroll));',
     ' col=mix(col,voidc,uDissolve);',
     ' gl_FragColor=vec4(col,1.);}'
   ].join('\n');
 
   var gl = canvas && (canvas.getContext('webgl', { antialias: false, alpha: false }) || canvas.getContext('experimental-webgl'));
   var state = { mx: -9999, my: -9999, tx: -9999, ty: -9999, scroll: 0, scrollT: 0, dissolve: 0, dissolveT: 0, ember: parseFloat(canvas && canvas.dataset.ember || '1') };
+  state.scroll = state.scrollT = parseFloat(canvas && canvas.dataset.scroll || '0');
 
   function compile(type, src) {
     var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
@@ -94,7 +99,7 @@
 
   if (!reduced) {
     window.addEventListener('pointermove', function (e) { state.tx = e.clientX; state.ty = e.clientY; }, { passive: true });
-    window.addEventListener('scroll', function () { state.scrollT = window.scrollY; }, { passive: true });
+    window.addEventListener('scroll', function () { state.scrollT = window.scrollY; doc.classList.toggle('past-hero', window.scrollY > innerHeight * 0.5); }, { passive: true });
   }
 
   /* custom cursor ring (fine pointers only) */
