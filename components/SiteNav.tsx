@@ -8,7 +8,6 @@ export const MENU = [
   { href: "/", label: "소개" },
   { href: "/keywords", label: "핵심 키워드" },
   { href: "/examples", label: "산출물 예시" },
-  { href: "/cases", label: "컨설팅 수행사례" },
 ] as const;
 
 export default function SiteNav() {
