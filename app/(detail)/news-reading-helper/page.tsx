@@ -27,10 +27,10 @@ export default function NewsReadingHelperPage() {
 
         <section className="section" id="result">
           <SectionHead n="02" title="결과 적용물 · PDF" meta="A4 1~2쪽 경영진 보고서" />
-          <p className="lead">이 스킬로 실제 기사를 처리해 만든 보고서입니다. 헤드라인, 요약, 핵심 사실, 배경, 주요 인물, 영향과 전망, 출처 순으로 한 장에 담깁니다.</p>
+          <p className="lead">이 스킬로 실제 기사를 처리해 만든 보고서입니다. Bloomberg Intelligence의 미·중 AI 경쟁 기사(2026-10-04)를 2쪽 리서치 노트로 조판했습니다. 헤드라인, 요약, 핵심 사실, 배경, 주요 인물, 영향과 전망, 출처 순으로 담깁니다.</p>
           <div className="embed">
             <div className="embed-bar">
-              <span>samples/news-report.pdf</span>
+              <span>samples/news-report.pdf · 2 pages · A4</span>
               {hasPdf && <a href={PDF} target="_blank" rel="noopener"><IconOpen />새 탭에서 열기</a>}
             </div>
             {hasPdf ? (
