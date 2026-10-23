@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import styles from "@/app/(site)/site.module.css";
 
 export const MENU = [
-  { href: "/", label: "소개" },
-  { href: "/keywords", label: "핵심 키워드" },
+  { href: "/", label: "트레일러" },
+  { href: "/intro", label: "소개" },
   { href: "/examples", label: "산출물 예시" },
 ] as const;
 
